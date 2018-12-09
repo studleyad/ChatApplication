@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create an Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item no-padding>
+      <ion-input no-padding required type="text" placeholder="First Name" value="name" #fname></ion-input>
+    </ion-item>
+    <ion-item no-padding>
+      <ion-input no-padding required type="text" placeholder="Last Name" value="name" #lname></ion-input>
+    </ion-item>
+    <ion-item no-padding>
+      <ion-input no-padding required type="tel" placeholder="Phone" value="123456789" #phone></ion-input>
+    </ion-item>
+    <ion-item no-padding> 
+      <ion-input no-padding required type="email" placeholder="Username" value="user4@user.com" #username></ion-input>
+    </ion-item>
+    <ion-item no-padding>
+      <ion-input no-padding required type="password" placeholder="Password" value="Pword1234" #password></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button shape="round" color="primary" fill="outline" (click)="signUp();">Create Account</ion-button>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="logo-con">
+    <ion-img class="logo" src="{{logo}}"></ion-img>
+  </div>
+  <ion-list class="login-form">
+    <ion-item no-padding class="item-input">
+        <ion-label position="floating">Username</ion-label>
+      <ion-input no-padding required type="email" name="uname" #username></ion-input>
+    </ion-item>
+    <ion-item no-padding class="item-input">
+        <ion-label position="floating">Password</ion-label>
+      <ion-input no-padding required type="Password" name="pword" #password></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="btns">
+    <div class="btn email-login">
+      <ion-button id="signin" shape="round" color="danger" fill="outline" (click)="signIn();">Sign In</ion-button>
+      <ion-button id="signup" shape="round" color="danger" fill="outline" (click)="signUp();">Sign Up</ion-button>
+    </div>
+    <div class="btn google-login">
+      <ion-button id="google" shape="round" color="danger" fill="outline" (click)="googleSignIn();"><ion-icon name="logo-google"></ion-icon> Sign In With Google</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button size="small">
+          <ion-icon name="menu"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="bottom">
+            <ion-fab-button routerLink='/profile'><ion-icon name="person"></ion-icon></ion-fab-button>
+            <ion-fab-button routerLink='/chat'><ion-icon name="chatbubbles"></ion-icon></ion-fab-button>
+            <ion-fab-button routerLink='/settings'><ion-icon name="settings"></ion-icon></ion-fab-button>
+            <ion-fab-button (click)="logout();"><ion-icon name="log-out"></ion-icon></ion-fab-button>
+          </ion-fab-list>
+      </ion-fab>
+  <div class="chat-output" #scrollMe no-pdding [scrollTop]="scrollMe.scrollHeight">
+    <div *ngFor="let message of messages" [class]="message.specialMessage ? 'special' : message.username == user ? 'chat-bubble messageRight' : 'chat-bubble messageLeft'">
+      <div [class]="message.username == user ? 'none' : 'specialMessage'">
+          <p class="smMessage">{{message.username}} {{message.message}}</p>
+          <p class="smDate">{{message.stDate}} at {{message.time}}</p>
+      </div>     
+      <p class="user" >{{message.username}}</p>
+      <p class="date">{{message.stDate}} at {{message.time}}</p>
+      <p class="message">{{message.message}}</p>
+    </div>
+  </div>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar >
+    <div class="chat-input">
+        <ion-item padding-horizontal class="input">
+          <ion-input #newmessage type="text" id="minput" ></ion-input>
+        </ion-item>
+        
+          <ion-button class="send" size="small" (click)="send();">Send</ion-button>
+        </div>
+    </ion-toolbar>
+</ion-footer>
